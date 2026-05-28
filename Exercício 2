@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        double salario, somaSalarios = 0;
+        int filhos, somaFilhos = 0;
+        int quantidadePessoas = 0;
+
+        while (true) {
+
+            System.out.print("Informe o salário: ");
+            salario = sc.nextDouble();
+
+            // Encerra quando o salário for negativo
+            if (salario < 0) {
+                break;
+            }
+
+            System.out.print("Informe o número de filhos: ");
+            filhos = sc.nextInt();
+
+            somaSalarios += salario;
+            somaFilhos += filhos;
+            quantidadePessoas++;
+        }
+
+        // Verifica se houve dados válidos
+        if (quantidadePessoas > 0) {
+
+            double mediaSalario = somaSalarios / quantidadePessoas;
+            double mediaFilhos = (double) somaFilhos / quantidadePessoas;
+
+            System.out.println("\nRESULTADOS:");
+            System.out.println("Média dos salários: " + mediaSalario);
+            System.out.println("Média do número de filhos: " + mediaFilhos);
+
+        } else {
+            System.out.println("Nenhum dado válido foi informado.");
+        }
+
+        sc.close();
+    }
+}
