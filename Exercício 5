@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        double temperatura;
+        double soma = 0;
+        double media;
+
+        for (int i = 1; i <= 10; i++) {
+
+            System.out.print("Digite a temperatura do dia " + i + ": ");
+            temperatura = sc.nextDouble();
+
+            soma += temperatura;
+        }
+
+        media = soma / 10;
+
+        System.out.println("Média das temperaturas: " + media);
+
+        sc.close();
+    }
+}
