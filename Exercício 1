@@ -1,0 +1,50 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int matricula;
+        double nota1, nota2, nota3, media;
+
+        while (true) {
+
+            System.out.print("Informe a matrícula do aluno: ");
+            matricula = sc.nextInt();
+
+            // Encerra o programa se a matrícula for negativa
+            if (matricula < 0) {
+                System.out.println("Programa encerrado.");
+                break;
+            }
+
+            // Leitura das notas
+            System.out.print("Informe a primeira nota: ");
+            nota1 = sc.nextDouble();
+
+            System.out.print("Informe a segunda nota: ");
+            nota2 = sc.nextDouble();
+
+            System.out.print("Informe a terceira nota: ");
+            nota3 = sc.nextDouble();
+
+            // Cálculo da média
+            media = (nota1 + nota2 + nota3) / 3;
+
+            // Verificação da situação do aluno
+            if (media >= 70) {
+                System.out.println("Aluno APROVADO.");
+            } else if (media >= 60 && media < 70) {
+                System.out.println("Aluno em EXAME.");
+            } else {
+                System.out.println("Aluno REPROVADO.");
+            }
+
+            System.out.println("Média: " + media);
+            System.out.println();
+        }
+
+        sc.close();
+    }
+}
